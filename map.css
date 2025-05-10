@@ -8,7 +8,7 @@ html, body {
 #map {
   width: 100%; /* Adjust width to your desired size */
   max-width: 1200px;
-  height: 700px; /* Adjust height to your desired size */
+  height: 80vh; /* Adjust height to your desired size */
   margin: 1em auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for effect */
   border-radius: 8px; /* Optional: rounded corners */
