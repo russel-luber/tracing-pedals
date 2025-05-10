@@ -10,11 +10,11 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnNsLWxiciIsImEiOiJjbWFoeWxiZnMwYXBnMnFvaTFjY
 // Initialize the map
 const map = new mapboxgl.Map({
   container: "map", // ID of the <div> in index.html
-  style: 'mapbox://styles/mapbox/streets-v12', // You can later replace with your custom style
+  style: 'mapbox://styles/rsl-lbr/cmai0j3r000wm01sn9mu683me', // You can later replace with your custom style
   center: [-71.09407439974805, 42.361357592424625], // MIT
   zoom: 12,
   minZoom: 5,
-  maxZoom: 18
+  maxZoom: 18,
 });
 
 // Confirm it's loaded
