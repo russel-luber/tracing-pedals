@@ -20,6 +20,16 @@ const map = new mapboxgl.Map({
 // Confirm it's loaded
 console.log('Mapbox GL JS Loaded:', mapboxgl);
 
+// Reusable func for paint style color of bike routes
+function getBikeLaneStyle(color) {
+  return {
+    'line-color': color,
+    'line-width': 3,
+    'line-opacity': 0.4,
+  };
+}
+
+
 map.on('load', async () => {
   // Add Boston bike lane data
 
@@ -34,11 +44,7 @@ map.on('load', async () => {
     id: 'bike-lanes-boston',
     type: 'line',
     source: 'boston_route',
-    paint: {
-      'line-color': '#32D400',   // Bright green lines
-      'line-width': 3,         // Line thickness
-      'line-opacity': 0.4      // Slight transparency
-    }
+    paint: getBikeLaneStyle('#32D400'),
   });
 
   console.log('Boston bike lanes loaded!');
@@ -53,11 +59,7 @@ map.on('load', async () => {
     id: 'bike-lanes-cambridge',
     type: 'line',
     source: 'cambridge_route',
-    paint: {
-      'line-color': 'blue',    // Use a different color than Boston
-      'line-width': 3,
-      'line-opacity': 0.4
-    }
+    paint: getBikeLaneStyle('blue'),
   });
 
   console.log('Cambridge bike lanes loaded!');
