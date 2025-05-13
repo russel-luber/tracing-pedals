@@ -21,15 +21,15 @@ const map = new mapboxgl.Map({
 console.log('Mapbox GL JS Loaded:', mapboxgl);
 
 map.on('load', async () => {
-  // Step 2.1: Add Boston bike lane data
+  // Add Boston bike lane data
 
-  // 1. Add the data source
+  // Add the data source
   map.addSource('boston_route', {
     type: 'geojson',
     data: 'https://bostonopendata-boston.opendata.arcgis.com/datasets/boston::existing-bike-network-2022.geojson',
   });
 
-  // 2. Add the visual layer
+  // Add the visual layer
   map.addLayer({
     id: 'bike-lanes-boston',
     type: 'line',
@@ -42,4 +42,25 @@ map.on('load', async () => {
   });
 
   console.log('Boston bike lanes loaded!');
+
+  // Add Cambridge bike lane data
+  map.addSource('cambridge_route', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/cambridgegis/cambridgegis_data/main/Recreation/Bike_Facilities/RECREATION_BikeFacilities.geojson',
+  });
+
+  map.addLayer({
+    id: 'bike-lanes-cambridge',
+    type: 'line',
+    source: 'cambridge_route',
+    paint: {
+      'line-color': 'blue',    // Use a different color than Boston
+      'line-width': 3,
+      'line-opacity': 0.4
+    }
+  });
+
+  console.log('Cambridge bike lanes loaded!');
 });
+
+
