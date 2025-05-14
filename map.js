@@ -1,5 +1,6 @@
 // Import Mapbox as an ESM module
 import mapboxgl from 'https://cdn.jsdelivr.net/npm/mapbox-gl@2.15.0/+esm';
+import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
 // Check that Mapbox GL JS is loaded
 console.log('Mapbox GL JS Loaded:', mapboxgl);
@@ -63,6 +64,23 @@ map.on('load', async () => {
   });
 
   console.log('Cambridge bike lanes loaded!');
+  
+  // Load Bluebike station data using D3
+  let jsonData;
+  try {
+    const jsonurl = 'https://dsc106.com/labs/lab07/data/bluebikes-stations.json';
+    jsonData = await d3.json(jsonurl);
+
+    // Await JSON fetch
+    console.log('Loaded JSON Data:', jsonData);
+
+  } catch (error) {
+    console.error('Error loading JSON:', error); // Handle errors
+  }
+  
+  let stations = jsonData.data.stations;
+  console.log('Stations Array:', stations);
+
 });
 
 
