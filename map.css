@@ -28,3 +28,35 @@ html, body {
   fill-opacity: 0.6;
   stroke: white;
 }
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 1em;
+  font: 1em system-ui, sans-serif;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-left: auto;
+  font-size: 0.9em;
+}
+
+#time-slider {
+  width: 120px;
+}
+
+#selected-time {
+  font-variant-numeric: tabular-nums;
+  font-weight: bold;
+}
+
+#any-time {
+  font-size: 0.9em;
+  color: #666;
+}
